@@ -6,3 +6,5 @@
 
 ```docker build --no-cache --progress=plain```
 
+### Run shell inside docker
+```docker exec -it <container id> sh```
