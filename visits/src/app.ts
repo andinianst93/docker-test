@@ -24,7 +24,6 @@ app.get('/', (_req: Request, res: Response) => {
     });
 });
 
-
 const PORT = 8081;
 app.listen(PORT, () => {
     console.log(`Server is listening on ${PORT}`);
