@@ -7,7 +7,7 @@ describe('Home', () => {
         render(<Home />);
 
     await waitFor(() => {
-        const heading = screen.queryByText('Get started by editing app/page.tsx');
+        const heading = screen.queryByText('New Products');
         if (heading) 
         {
             expect(heading).toBeInTheDocument();
