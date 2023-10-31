@@ -7,3 +7,18 @@ before_install:
 
 script:
   - docker run -e CI=true andinianst93/aws-static-next-app npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  app: "docker-next-app"
+  env: "docker-next-app-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-335856502715"
+  bucket_path: "docker-next-app"
+  on:
+    branch: master
+  before_deploy:
+    - echo "Loading environment variables from .env file"
+    - source .env
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"

@@ -1,27 +1,24 @@
-name: CI/CD Pipeline
+name: CI
+
 on:
   push:
     branches:
-      - master
+      - master  
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Check out code
+      uses: actions/checkout@v4
 
-    - name: Set up Docker
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+
+    - name: Build and run Docker container
       run: |
-        sudo apt-get update
-        sudo apt-get install -y docker.io
-        sudo systemctl start docker
-        sudo systemctl enable docker
-      if: runner.os == 'Linux'
-
-    - name: Build docker image
-      run: docker build -t andinianst93/aws-static-next-app -f Dockerfile.dev .
-
-    - name: Run tests
-      run: docker run -e CI=true andinianst93/aws-static-next-app npm run test
+        docker build -t andinianst93/aws-static-next-app -f Dockerfile.dev .
+        docker run -e CI=true andinianst93/aws-static-next-app npm run test
