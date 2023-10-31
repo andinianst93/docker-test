@@ -28,3 +28,9 @@ Two options
 ```docker run -it andinianst93/frontend npm run test```
 - second:
 set up second container in docker-compose.yml
+
+#### Travis CI
+1. Tell travis we need a copy of docker running
+2. Build our image using Dockerfile.dev
+3. Tell travis how to run our test suite
+4. Tell travis how to deploy our code to AWS
