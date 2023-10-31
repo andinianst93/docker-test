@@ -20,5 +20,4 @@ jobs:
 
     - name: Build and run Docker container
       run: |
-        docker build -t andinianst93/aws-static-next-app -f Dockerfile.dev .
-        docker run -e CI=true andinianst93/aws-static-next-app npm run test
+        docker compose -f compose-dev.yaml up
