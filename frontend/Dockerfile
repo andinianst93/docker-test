@@ -7,6 +7,8 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve the application using Nginx
-FROM nginx
-COPY --from=builder /app/.next /usr/share/nginx/html
+FROM nginx:alpine
+COPY --from=builder /app/out /usr/share/nginx/html
+
+
 
