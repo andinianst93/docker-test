@@ -49,15 +49,4 @@ export const product = [
         price: '$40',
         color: 'Black',
     },
-    {
-        id: 6,
-        name: 'iPhone 6',
-        href: '/6',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis libero ex, sed vehicula nunc consequat non. Proin semper accumsan quam non pulvinar. Vivamus est nibh, sollicitudin et risus nec, pulvinar iaculis elit. Aenean in elit at magna fringilla auctor sed vitae ipsum. Praesent rutrum nulla id ornare aliquam.',
-        imageSrc: 'https://res.cloudinary.com/andinianst93/image/upload/v1684282459/iphone_terkunci_3b6e67a9a5.webp',
-        imageAlt: "iPhone 6",
-        price: '$41',
-        color: 'Black',
-    },
-
 ]
