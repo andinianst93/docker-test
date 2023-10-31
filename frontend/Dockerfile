@@ -8,6 +8,7 @@ RUN npm run build
 
 # Stage 2: Serve the application using Nginx
 FROM nginx:alpine
+EXPOSE 80
 COPY --from=builder /app/out /usr/share/nginx/html
 
 
